@@ -34,7 +34,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-2">
                         <img src={logo} alt="CoreAIx Labs" className="h-14 w-auto" />
-                        <span className="text-xl font-bold tracking-tight text-white hidden sm:block">
+                        <span className="text-xl font-bold tracking-tight text-white">
                             CoreAIx <span className="text-primary">Labs</span>
                         </span>
                     </Link>
