@@ -107,10 +107,10 @@ const ContactForm = () => {
 
         emailjs
             .sendForm(
-                "service_d5fc9n9",      // ✅ SERVICE ID
-                "template_6w3bcgn",       // ✅ TEMPLATE ID
+                "zoho_coreaixlabsllp",      // ✅ SERVICE ID
+                "zoho_coreaixlabsllp",       // ✅ TEMPLATE ID
                 formRef.current,
-                "Ii1RcDGD3mDfee2mm"       // ✅ PUBLIC KEY
+                "xY6wRSNpWf5CA1vJZ"       // ✅ PUBLIC KEY
             )
             .then(
                 () => {
