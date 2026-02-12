@@ -32,7 +32,7 @@ const Home = () => {
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Button onClick={() => window.location.href = '/technology'}>Explore Technology</Button>
-                            <Button variant="secondary" onClick={() => document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' })}>Contact Us</Button>
+                            <Button variant="secondary" onClick={() => window.location.href = '/about#contact'}>Contact Us</Button>
                         </div>
                     </motion.div>
                 </div>

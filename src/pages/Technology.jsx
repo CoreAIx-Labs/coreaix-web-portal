@@ -27,8 +27,8 @@ const Technology = () => {
                             <div className="hidden md:flex absolute -right-8 top-1/2 -translate-y-1/2 text-text-dim justify-center w-8">
                                 <ArrowRight size={20} />
                             </div>
-                            <div className="md:hidden flex justify-center text-text-dim my-2">
-                                <ArrowDown size={20} />
+                            <div className="md:hidden absolute top-full left-1/2 -translate-x-1/2 mt-1 text-text-dim z-20">
+                                <ArrowDown size={24} />
                             </div>
                         </div>
 
@@ -41,8 +41,8 @@ const Technology = () => {
                             <div className="hidden md:flex absolute -right-8 top-1/2 -translate-y-1/2 text-text-dim justify-center w-8">
                                 <ArrowRight size={20} />
                             </div>
-                            <div className="md:hidden flex justify-center text-text-dim my-2">
-                                <ArrowDown size={20} />
+                            <div className="md:hidden absolute top-full left-1/2 -translate-x-1/2 mt-1 text-text-dim z-20">
+                                <ArrowDown size={24} />
                             </div>
                         </div>
 
@@ -55,8 +55,8 @@ const Technology = () => {
                             <div className="hidden md:flex absolute -right-8 top-1/2 -translate-y-1/2 text-text-dim justify-center w-8">
                                 <ArrowRight size={20} />
                             </div>
-                            <div className="md:hidden flex justify-center text-text-dim my-2">
-                                <ArrowDown size={20} />
+                            <div className="md:hidden absolute top-full left-1/2 -translate-x-1/2 mt-1 text-text-dim z-20">
+                                <ArrowDown size={24} />
                             </div>
                         </div>
 

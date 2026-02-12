@@ -56,7 +56,7 @@ const Navbar = () => {
                         <Button
                             variant="primary"
                             className="px-5 py-2 text-sm"
-                            onClick={() => document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' })}
+                            onClick={() => window.location.hash = '/about#contact' ? window.location.href = '/about#contact' : document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                         >
                             Contact Us
                         </Button>
@@ -91,7 +91,7 @@ const Navbar = () => {
                             className="w-full justify-center"
                             onClick={() => {
                                 setIsOpen(false);
-                                document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' });
+                                window.location.href = '/about#contact';
                             }}
                         >
                             Contact Us

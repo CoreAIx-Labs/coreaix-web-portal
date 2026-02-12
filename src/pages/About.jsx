@@ -1,11 +1,26 @@
 import React, { useState, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Linkedin, Award, User, Send, Loader2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import Modal from '../components/ui/Modal';
 
 const About = () => {
+    const { hash } = useLocation();
+
+    React.useEffect(() => {
+        if (hash) {
+            const element = document.getElementById(hash.replace('#', ''));
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+        }
+    }, [hash]);
+
     const leadership = [
         {
             name: "Ronit Rathod",
@@ -98,12 +113,11 @@ const About = () => {
 const ContactForm = () => {
     const formRef = useRef();
     const [loading, setLoading] = useState(false);
-    const [status, setStatus] = useState("");
+    const [modalConfig, setModalConfig] = useState({ isOpen: false, title: '', message: '', type: 'success' });
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true);
-        setStatus("");
 
         emailjs
             .sendForm(
@@ -115,78 +129,92 @@ const ContactForm = () => {
             .then(
                 () => {
                     setLoading(false);
-                    setStatus("Thank you! We will get back to you soon 🙌");
+                    setModalConfig({
+                        isOpen: true,
+                        title: "Message Sent!",
+                        message: "Thank you! We will get back to you soon ",
+                        type: 'success'
+                    });
                     formRef.current.reset();
                 },
                 (error) => {
                     console.error(error);
                     setLoading(false);
-                    setStatus("Something went wrong. Please try again ❌");
+                    setModalConfig({
+                        isOpen: true,
+                        title: "Error",
+                        message: "Something went wrong. Please try again ",
+                        type: 'error'
+                    });
                 }
             );
     };
 
     return (
-        <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-            <div>
-                <label htmlFor="name" className="block text-sm font-medium text-text-dim mb-1">Your Name</label>
-                <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    required
-                    className="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 text-text-main placeholder-text-dim/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
-                    placeholder="John Doe"
-                />
-            </div>
-            <div>
-                <label htmlFor="email" className="block text-sm font-medium text-text-dim mb-1">Your Email</label>
-                <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    required
-                    className="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 text-text-main placeholder-text-dim/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
-                    placeholder="john@example.com"
-                />
-            </div>
-            <div>
-                <label htmlFor="message" className="block text-sm font-medium text-text-dim mb-1">Your Message</label>
-                <textarea
-                    name="message"
-                    id="message"
-                    required
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 text-text-main placeholder-text-dim/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
-                    placeholder="How can we help you?"
-                />
-            </div>
+        <>
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-text-dim mb-1">Your Name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        required
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 text-text-main placeholder-text-dim/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                        placeholder="John Doe"
+                    />
+                </div>
+                <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-text-dim mb-1">Your Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        required
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 text-text-main placeholder-text-dim/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                        placeholder="john@example.com"
+                    />
+                </div>
+                <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-text-dim mb-1">Your Message</label>
+                    <textarea
+                        name="message"
+                        id="message"
+                        required
+                        rows={4}
+                        className="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 text-text-main placeholder-text-dim/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
+                        placeholder="How can we help you?"
+                    />
+                </div>
 
-            <Button
-                type="submit"
-                variant="primary"
-                disabled={loading}
-                className="w-full justify-center"
-            >
-                {loading ? (
-                    <>
-                        <Loader2 className="animate-spin mr-2" size={20} />
-                        Sending...
-                    </>
-                ) : (
-                    <>
-                        Send Message
-                        <Send size={18} className="ml-2" />
-                    </>
-                )}
-            </Button>
+                <Button
+                    type="submit"
+                    variant="primary"
+                    disabled={loading}
+                    className="w-full justify-center"
+                >
+                    {loading ? (
+                        <>
+                            <Loader2 className="animate-spin mr-2" size={20} />
+                            Sending...
+                        </>
+                    ) : (
+                        <>
+                            Send Message
+                            <Send size={18} className="ml-2" />
+                        </>
+                    )}
+                </Button>
+            </form>
 
-            {status && (
-                <p className={`text-center text-sm ${status.includes("wrong") ? "text-red-400" : "text-green-400"}`}>
-                    {status}
-                </p>
-            )}
-        </form>
+            <Modal
+                isOpen={modalConfig.isOpen}
+                onClose={() => setModalConfig({ ...modalConfig, isOpen: false })}
+                title={modalConfig.title}
+                message={modalConfig.message}
+                type={modalConfig.type}
+            />
+        </>
     );
 };
 
