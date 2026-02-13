@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Mail, MapPin } from 'lucide-react';
+import { Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import logo from '../../assets/logo.png';
 
 const Footer = () => {
@@ -40,9 +40,19 @@ const Footer = () => {
                                 <Mail size={16} className="text-primary" />
                                 <a href="mailto:contact@coreaixlabs.tech" className="hover:text-primary transition-colors">contact@coreaixlabs.tech</a>
                             </li>
+                            <li className="flex items-center gap-2">
+                                <Phone size={16} className="text-primary" />
+                                <a href="tel:+917859836766" className="hover:text-primary transition-colors">+91 78598-36766</a>
+                            </li>
                             <li className="flex items-start gap-2">
-                                <MapPin size={16} className="text-primary mt-1" />
-                                <span className="leading-relaxed">Surat / Jamnagar,<br />Gujarat, India</span>
+                                <MapPin size={16} className="text-primary mt-1 shrink-0" />
+                                <div className="leading-relaxed">
+                                    <p className="font text-text-main mb-1">REGISTERED OFFICE (Headquarters)</p>
+                                    <p className="mb-4">25/2, Vrundavan Society, <br />Street No. 7, Joisar Estate, Khodiyar Colony,<br />Jamnagar, Gujarat - 361006.</p>
+
+                                    <p className="font text-text-main mb-1">R&D UNIT (Operations)</p>
+                                    <p>Surat, Gujarat, India.</p>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -57,7 +67,7 @@ const Footer = () => {
 
                         </div>
                         <div className="mt-6">
-                            <div className="text-xs text-text-dim border border-slate-200 bg-white rounded px-3 py-2 inline-block shadow-sm">
+                            <div className="text-sm text-text-dim border border-slate-200 bg-white rounded px-3 py-2 inline-block shadow-sm">
                                 DPIIT Recognized Startup<br />
                                 <span className="text-primary font-semibold">DIPP243118</span>
                             </div>
@@ -68,8 +78,8 @@ const Footer = () => {
                 <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-text-dim">
                     <p>&copy; {new Date().getFullYear()} CoreAIx Labs LLP. All rights reserved.</p>
                     <div className="flex gap-6 mt-4 md:mt-0">
-                        <a href="#" className="hover:text-text-main transition-colors">Privacy Policy</a>
-                        <a href="#" className="hover:text-text-main transition-colors">Terms of Service</a>
+                        <Link to="/privacy" className="hover:text-text-main transition-colors">Privacy Policy</Link>
+                        <Link to="/terms" className="hover:text-text-main transition-colors">Terms of Service</Link>
                     </div>
                 </div>
             </div>

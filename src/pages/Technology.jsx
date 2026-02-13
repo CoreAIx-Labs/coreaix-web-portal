@@ -10,7 +10,7 @@ const Technology = () => {
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-bold mb-4 text-text-main">The Dual-Tier Logic Engine.</h1>
                     <p className="text-text-dim max-w-2xl mx-auto">
-                        A hybrid architecture combining Edge Neural Processing and Clinical Cloud AI.
+                        A proprietary architecture fusing passive autonomic monitoring with active neurological validation.
                     </p>
                 </div>
 
@@ -20,51 +20,38 @@ const Technology = () => {
                         {/* Step 1 */}
                         <div className="p-6 border border-slate-200 rounded-lg bg-white shadow-sm relative z-10 transition-shadow hover:shadow-md">
                             <Activity className="mx-auto text-primary mb-2" size={32} />
-                            <h3 className="font-bold text-text-main">Sensors</h3>
-                            <p className="text-xs text-text-dim mt-1">PPG + ECG</p>
+                            <h3 className="font-bold text-text-main">Biomarkers</h3>
+                            <p className="text-xs text-text-dim mt-1">Multi-Modal Fusion</p>
 
-                            {/* Connector */}
-                            <div className="hidden md:flex absolute -right-8 top-1/2 -translate-y-1/2 text-text-dim justify-center w-8">
-                                <ArrowRight size={20} />
-                            </div>
-                            <div className="md:hidden absolute top-full left-1/2 -translate-x-1/2 mt-1 text-text-dim z-20">
-                                <ArrowDown size={24} />
-                            </div>
+                            <div className="hidden md:flex absolute -right-8 top-1/2 -translate-y-1/2 text-text-dim justify-center w-8"><ArrowRight size={20} /></div>
+                            <div className="md:hidden absolute top-full left-1/2 -translate-x-1/2 mt-1 text-text-dim z-20"><ArrowDown size={24} /></div>
                         </div>
 
                         {/* Step 2 */}
                         <div className="p-6 border border-slate-200 rounded-lg bg-white shadow-sm relative z-10 transition-shadow hover:shadow-md">
                             <Cpu className="mx-auto text-primary mb-2" size={32} />
-                            <h3 className="font-bold text-text-main">Edge Compute</h3>
-                            <p className="text-xs text-text-dim mt-1">ESP32-C3</p>
+                            <h3 className="font-bold text-text-main">Edge Core</h3>
+                            <p className="text-xs text-text-dim mt-1">Real-Time Inference</p>
 
-                            <div className="hidden md:flex absolute -right-8 top-1/2 -translate-y-1/2 text-text-dim justify-center w-8">
-                                <ArrowRight size={20} />
-                            </div>
-                            <div className="md:hidden absolute top-full left-1/2 -translate-x-1/2 mt-1 text-text-dim z-20">
-                                <ArrowDown size={24} />
-                            </div>
+                            <div className="hidden md:flex absolute -right-8 top-1/2 -translate-y-1/2 text-text-dim justify-center w-8"><ArrowRight size={20} /></div>
+                            <div className="md:hidden absolute top-full left-1/2 -translate-x-1/2 mt-1 text-text-dim z-20"><ArrowDown size={24} /></div>
                         </div>
 
                         {/* Step 3 */}
                         <div className="p-6 border border-slate-200 rounded-lg bg-white shadow-sm relative z-10 transition-shadow hover:shadow-md">
                             <Server className="mx-auto text-primary mb-2" size={32} />
-                            <h3 className="font-bold text-text-main">Cloud AI</h3>
+                            <h3 className="font-bold text-text-main">Neural Cloud</h3>
                             <p className="text-xs text-text-dim mt-1">Deep Learning</p>
 
-                            <div className="hidden md:flex absolute -right-8 top-1/2 -translate-y-1/2 text-text-dim justify-center w-8">
-                                <ArrowRight size={20} />
-                            </div>
-                            <div className="md:hidden absolute top-full left-1/2 -translate-x-1/2 mt-1 text-text-dim z-20">
-                                <ArrowDown size={24} />
-                            </div>
+                            <div className="hidden md:flex absolute -right-8 top-1/2 -translate-y-1/2 text-text-dim justify-center w-8"><ArrowRight size={20} /></div>
+                            <div className="md:hidden absolute top-full left-1/2 -translate-x-1/2 mt-1 text-text-dim z-20"><ArrowDown size={24} /></div>
                         </div>
 
                         {/* Step 4 */}
                         <div className="p-6 border border-slate-200 rounded-lg bg-white shadow-sm z-10 transition-shadow hover:shadow-md">
                             <Smartphone className="mx-auto text-primary mb-2" size={32} />
-                            <h3 className="font-bold text-text-main">App</h3>
-                            <p className="text-xs text-text-dim mt-1">User Interface</p>
+                            <h3 className="font-bold text-text-main">Interface</h3>
+                            <p className="text-xs text-text-dim mt-1">Clinician Dashboard</p>
                         </div>
                     </div>
                 </div>
@@ -72,44 +59,68 @@ const Technology = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
                         <h3 className="text-2xl font-bold mb-4 flex items-center gap-3 text-text-main">
-                            <Activity className="text-primary" /> The Watchdog
+                            <Activity className="text-primary" /> The Sentinel Layer
                         </h3>
                         <p className="text-text-dim mb-6">
-                            Continuous HRV monitoring via wearable-compatible hardware. Detects stress precursors in real-time without user intervention.
+                            Passive hemodynamic monitoring designed to detect autonomic nervous system (ANS) dysregulation. Acts as the first line of defense, filtering noise from signal.
                         </p>
                         <ul className="space-y-2 text-sm text-text-dim">
-                            <li>• 24/7 Background monitoring</li>
-                            <li>• Anomaly detection</li>
-                            <li>• Battery efficient</li>
+                            <li>• Continuous Background Sampling</li>
+                            <li>• Temporal Anomaly Detection</li>
+                            <li>• Zero-User Intervention</li>
                         </ul>
                     </div>
 
                     <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
                         <h3 className="text-2xl font-bold mb-4 flex items-center gap-3 text-text-main">
-                            <Brain className="text-primary" /> The Clinical Engine
+                            <Brain className="text-primary" /> The Diagnostic Core
                         </h3>
                         <p className="text-text-dim mb-6">
-                            EEG-verified MDD detection with 96.69% accuracy. Acted upon when anomalies are flagged by the Watchdog.
+                            High-dimensional neurological signal processing. Activated only when critical biomarkers are flagged, delivering objective state classification.
                         </p>
                         <ul className="space-y-2 text-sm text-text-dim">
-                            <li>• 16-channel EEG analysis</li>
-                            <li>• Clinical-grade precision</li>
-                            <li>• Doctor-verified reports</li>
+                            <li>• Multi-Variate Signal Fusion</li>
+                            <li>• Clinical-Grade Fidelity</li>
+                            <li>• Physician-Ready Telemetry</li>
                         </ul>
                     </div>
                 </div>
             </Section>
 
             <Section id="hardware" className="bg-bg-alt">
-                <h2 className="text-3xl font-bold mb-12 text-center text-text-main">Hardware Specifications</h2>
+                <h2 className="text-3xl font-bold mb-12 text-center text-text-main">Technical Specifications</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {[
-                        { icon: Activity, title: "Multi-Modal Fusion", desc: "Synced Hemodynamic (PPG) and Bio-potential (EEG) signal acquisition." },
-                        { icon: Cpu, title: "Edge Neural Engine", desc: "On-device temporal processing with sub-200ms latency." },
-                        { icon: Wifi, title: "Secure Telemetry", desc: "End-to-End encrypted pipeline (DPDP & HIPAA Compliant)." },
-                        { icon: Database, title: "Adaptive Sampling", desc: "Dynamic frequency adjustment based on signal noise floor." },
-                        { icon: Zap, title: "Power Architecture", desc: "Ultra-low quiescent current design for 24/7 background monitoring." },
-                        { icon: Brain, title: "Haptic Neuro-Loop", desc: "Closed-loop biofeedback triggering tactile intervention cues." }
+                        {
+                            icon: Activity,
+                            title: "Multi-Modal Fusion",
+                            desc: "Clinical-grade synchronisation of Hemodynamic and Bio-potential signals."
+                        },
+                        {
+                            icon: Cpu,
+                            title: "Edge Neural Engine",
+                            desc: "On-device temporal data processing ensuring sub-200ms latency without cloud dependency."
+                        },
+                        {
+                            icon: Wifi,
+                            title: "Secure Telemetry",
+                            desc: "End-to-End encrypted data pipeline compliant with DPDP & HIPAA standards."
+                        },
+                        {
+                            icon: Database,
+                            title: "Adaptive Sampling",
+                            desc: "Dynamic frequency adjustment based on user activity to maximize signal fidelity."
+                        },
+                        {
+                            icon: Zap,
+                            title: "Power Architecture",
+                            desc: "Ultra-low quiescent current design optimized for continuous 24/7 background monitoring."
+                        },
+                        {
+                            icon: Brain,
+                            title: "Haptic Neuro-Loop",
+                            desc: "Closed-loop biofeedback system triggering precise tactile intervention cues."
+                        }
                     ].map((item, i) => (
                         <Card key={i} className="hover:bg-white hover:shadow-md transition-all duration-300" delay={i * 0.1}>
                             <item.icon className="text-primary mb-4" size={28} />

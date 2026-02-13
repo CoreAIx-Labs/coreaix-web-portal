@@ -57,7 +57,7 @@ const Navbar = () => {
                         <Button
                             variant="primary"
                             className="px-5 py-2 text-sm"
-                            onClick={() => window.location.hash = '/about#contact' ? window.location.href = '/about#contact' : document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                            onClick={() => window.location.hash = '/about#form' ? window.location.href = '/about#form' : document.getElementById('form')?.scrollIntoView({ behavior: 'smooth' })}
                         >
                             Contact Us
                         </Button>
@@ -92,7 +92,7 @@ const Navbar = () => {
                             className="w-full justify-center"
                             onClick={() => {
                                 setIsOpen(false);
-                                window.location.href = '/about#contact';
+                                window.location.href = '/about#form';
                             }}
                         >
                             Contact Us

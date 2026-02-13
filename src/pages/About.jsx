@@ -1,11 +1,13 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { Linkedin, Award, User, Send, Loader2 } from 'lucide-react';
+import { Linkedin, Award, User, Send } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { Loader2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import Section from '../components/ui/Section';
-import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import Modal from '../components/ui/Modal';
+import Section from '../components/ui/Section';
+import Card from '../components/ui/Card';
 
 const About = () => {
     const { hash } = useLocation();
@@ -25,6 +27,7 @@ const About = () => {
         {
             name: "Ronit Rathod",
             role: "Co-Founder & CEO",
+            image: "src/assets/ronit.jpeg", // Placeholder
             quote: "Building the brain of AI.",
             badges: ["National Finalist HST’25 (IIT Mandi)", "Ventra Guard AI — Grant Winner"],
             socials: { linkedin: "https://www.linkedin.com/in/ronitrathod/" }
@@ -32,6 +35,7 @@ const About = () => {
         {
             name: "Manan Tarsariya",
             role: "Co-Founder & COO",
+            image: "src/assets/manan.jpeg", // Placeholder
             quote: "Engineering the hardware.",
             badges: ["Smart India Hackathon (Hardware) Finalist", "NASA Space Apps Nominee"],
             socials: { linkedin: "https://www.linkedin.com/in/manantarsariya/" }
@@ -48,25 +52,37 @@ const About = () => {
             <Section id="leadership">
                 <h1 className="text-4xl md:text-5xl font-bold mb-16 text-center text-text-main">Leadership</h1>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     {leadership.map((person, i) => (
-                        <Card key={i} className="relative overflow-hidden group">
+                        <Card key={i} className="relative overflow-hidden group hover:border-primary transition-all duration-300">
                             <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
-                            <div className="flex justify-between items-start mb-4">
-                                <div>
-                                    <h2 className="text-2xl font-bold text-text-main">{person.name}</h2>
-                                    <p className="text-primary font-medium">{person.role}</p>
+
+                            <div className="flex flex-col md:flex-row gap-6 mb-6">
+                                {/* Profile Image */}
+                                <div className="w-24 h-24 md:w-32 md:h-32 shrink-0 rounded-lg overflow-hidden border-2 border-slate-100 shadow-sm">
+                                    <img
+                                        src={person.image}
+                                        alt={person.name}
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    />
                                 </div>
-                                <div className="flex gap-2">
-                                    <a href={person.socials.linkedin} target="_blank" rel="noopener noreferrer">
-                                        <Linkedin size={20} className="text-text-dim hover:text-primary cursor-pointer transition-colors" />
-                                    </a>
+
+                                <div className="flex-1">
+                                    <div className="flex justify-between items-start mb-2 gap-4">
+                                        <div>
+                                            <h2 className="text-2xl font-bold text-text-main">{person.name}</h2>
+                                            <p className="text-primary font-medium">{person.role}</p>
+                                        </div>
+                                        <a href={person.socials.linkedin} target="_blank" rel="noopener noreferrer">
+                                            <Linkedin size={24} className="text-text-dim hover:text-primary cursor-pointer transition-colors" />
+                                        </a>
+                                    </div>
+
+                                    <blockquote className="text-text-dim italic text-sm border-l-2 border-slate-200 pl-3 my-3">
+                                        "{person.quote}"
+                                    </blockquote>
                                 </div>
                             </div>
-
-                            <blockquote className="text-text-dim italic mb-6 border-l-2 border-slate-200 pl-4">
-                                "{person.quote}"
-                            </blockquote>
 
                             <div className="space-y-2">
                                 {person.badges.map((badge, j) => (
@@ -99,6 +115,53 @@ const About = () => {
             </Section>
 
             <Section id="contact" className="bg-bg-dark">
+                <div className="max-w-3xl mx-auto text-center">
+                    <h2 className="text-3xl font-bold mb-6 text-text-main">Partner With Us</h2>
+                    <p className="text-text-dim mb-10 text-lg">
+                        CoreAIx Labs is currently operating in stealth mode with select clinical partners.
+                        <br />
+                        For investment inquiries or pilot deployment, reach out to our leadership directly.
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row justify-center gap-6">
+                        {/* Button 1: General Inquiries */}
+                        <div
+                            onClick={() => document.getElementById('form')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="w-full sm:w-auto group"
+                        >
+                            <Card className="flex flex-col items-center p-8 border-slate-800 bg-white/5 hover:border-primary/50 hover:bg-white/10 transition-all duration-300 cursor-pointer h-full hover:scale-105">
+                                <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors">
+                                    <Send className="text-primary" size={28} />
+                                </div>
+                                <h3 className="font-bold text-xl text-text-main mb-2">General Inquiries</h3>
+                                <p className="text-text-dim mb-4 text-sm">For pilot programs & technology</p>
+                                <span className="text-primary font-medium border-b border-primary/30 pb-0.5 group-hover:border-primary transition-colors">
+                                    contact@coreaixlabs.tech
+                                </span>
+                            </Card>
+                        </div>
+
+                        {/* Button 2: Investor Relations */}
+                        <div
+                            onClick={() => document.getElementById('form')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="w-full sm:w-auto group"
+                        >
+                            <Card className="flex flex-col items-center p-8 border-slate-800 bg-white/5 hover:border-primary/50 hover:bg-white/10 transition-all duration-300 cursor-pointer h-full hover:scale-105">
+                                <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors">
+                                    <User className="text-primary" size={28} />
+                                </div>
+                                <h3 className="font-bold text-xl text-text-main mb-2">Investor Relations</h3>
+                                <p className="text-text-dim mb-4 text-sm">For funding & strategic alliances</p>
+                                <span className="text-primary font-medium border-b border-primary/30 pb-0.5 group-hover:border-primary transition-colors">
+                                    Connect with CEO
+                                </span>
+                            </Card>
+                        </div>
+                    </div>
+                </div>
+            </Section>
+
+            <Section id="form" className="bg-bg-alt">
                 <div className="max-w-2xl mx-auto">
                     <h2 className="text-3xl font-bold mb-8 text-center text-text-main">Get in Touch</h2>
                     <Card className="bg-white border-slate-200">
@@ -109,6 +172,10 @@ const About = () => {
         </div>
     );
 };
+
+
+
+export default About;
 
 const ContactForm = () => {
     const formRef = useRef();
@@ -217,5 +284,3 @@ const ContactForm = () => {
         </>
     );
 };
-
-export default About;

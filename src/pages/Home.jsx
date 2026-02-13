@@ -32,7 +32,7 @@ const Home = () => {
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Button onClick={() => window.location.href = '/technology'}>Explore Technology</Button>
-                            <Button variant="secondary" onClick={() => window.location.href = '/about#contact'}>Contact Us</Button>
+                            <Button variant="secondary" onClick={() => window.location.href = '/about#form'}>Contact Us</Button>
                         </div>
                     </motion.div>
                 </div>
@@ -40,11 +40,9 @@ const Home = () => {
                 {/* Badges */}
                 <div className="absolute bottom-10 right-10 flex gap-4 hidden md:flex">
                     <div className="bg-white/80 backdrop-blur-md px-4 py-2 rounded border border-slate-200 text-xs text-text-dim shadow-sm">
-                        DPIIT Startup India
+                        DPIIT Recognized Startup
                     </div>
-                    <div className="bg-white/80 backdrop-blur-md px-4 py-2 rounded border border-slate-200 text-xs text-text-dim shadow-sm">
-                        SCET
-                    </div>
+
                 </div>
             </section>
 
@@ -89,10 +87,10 @@ const Home = () => {
 
                         <div className="space-y-6">
                             {[
-                                { title: "Objective Diagnosis", desc: "16-channel EEG + HRV deep learning analysis." },
-                                { title: "Impossible to Fake", desc: "Direct physiological signal analysis bypasses bias." },
-                                { title: "Real-Time Inference", desc: "<200ms clinical inference latency." },
-                                { title: "Closed Loop System", desc: "Active neuro-regulation cues for immediate relief." }
+                                { title: "Objective Biomarkers", desc: "Moving beyond surveys to quantifiable physiological data." },
+                                { title: "Zero-Bias Diagnosis", desc: "Direct signal analysis impossible to fake or manipulate." },
+                                { title: "Real-Time Inference", desc: "Clinical-grade assessment delivered in milliseconds." },
+                                { title: "Closed Loop Intervention", desc: "Automated neuro-regulation cues for immediate stress relief." }
                             ].map((item, index) => (
                                 <motion.div
                                     key={index}
