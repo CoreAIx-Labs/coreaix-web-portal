@@ -5,6 +5,7 @@ import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import Section from '../components/ui/Section';
 import ParticleBackground from '../components/ui/ParticleBackground';
+import NeuroScan from '../components/ui/NeuroScan';
 
 const Home = () => {
     return (
@@ -111,22 +112,10 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="relative">
-                        <div className="absolute inset-0 bg-blue-100/50 blur-[100px] rounded-full" />
-                        <div className="relative bg-white/80 backdrop-blur-sm border border-slate-200 rounded-2xl p-8 aspect-square flex items-center justify-center shadow-lg">
-                            {/* Abstract visualization of Brain/EEG */}
-                            <div className="relative w-64 h-64 border border-blue-200 rounded-full animate-pulse flex items-center justify-center">
-                                <div className="w-48 h-48 border border-blue-300 rounded-full flex items-center justify-center">
-                                    <div className="w-32 h-32 bg-blue-50/50 rounded-full backdrop-blur-md flex items-center justify-center border border-blue-100">
-                                        <Brain size={64} className="text-primary animate-bounce-slow" />
-                                    </div>
-                                </div>
-                                {/* Orbiting nodes */}
-                                <div className="absolute top-0 left-1/2 w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)] -translate-x-1/2 -translate-y-1/2" />
-                                <div className="absolute bottom-0 left-1/2 w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)] -translate-x-1/2 translate-y-1/2" />
-                                <div className="absolute left-0 top-1/2 w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)] -translate-x-1/2 -translate-y-1/2" />
-                            </div>
-                        </div>
+                    {/* Replaced Visualization Section */}
+                    <div className="relative w-full aspect-square max-w-md mx-auto">
+                        <div className="absolute inset-0 bg-blue-400/10 blur-[80px] rounded-full pointer-events-none" />
+                        <NeuroScan />
                     </div>
                 </div>
             </Section>
